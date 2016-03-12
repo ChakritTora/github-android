@@ -24,6 +24,7 @@
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
             android:textAlignment="gravity"
+            android:background="@drawable/ninepatch_lab"
             android:singleLine="true"
             android:inputType="number"/>
 
@@ -34,6 +35,7 @@
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
             android:textAlignment="gravity"
+            android:background="@drawable/ninepatch_lab"
             android:singleLine="true"
             android:inputType="number"/>
 
@@ -69,7 +71,7 @@
         android:layout_marginTop="10dp">
 
         <RadioButton
-            android:id="@id/plus"
+            android:id="@+id/plus"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="16dp"
@@ -113,8 +115,30 @@
         android:checked="false"
         android:text="OFF"/>
 
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/helloWorld"/>
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp">
+
+        <com.inthecheesefactory.thecheeselibrary.widget.AdjustableImageButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_launcher"/>
+
+        <com.inthecheesefactory.thecheeselibrary.widget.AdjustableImageButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:background="@drawable/btn_default_normal"
+            android:src="@drawable/ic_launcher" />
+
+
+    </LinearLayout>
 </LinearLayout>

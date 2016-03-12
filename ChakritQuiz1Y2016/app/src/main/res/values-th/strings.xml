@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">ChakritQuiz1Y2016</string>
+    <string name="action_settings">ตั้งค่า</string>
+    <string name="name">ยินดีต้อนรับเข้าสู่มหาวิทยาลัยขอนแก่น</string>
+    <string name="countLikes">0 จำนวนชอบ</string>
+    <string name="nextButton">ถัดไป</string>
+</resources>

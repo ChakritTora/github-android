@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">My Calculator</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_refresh">Refresh</string>
+    <string name="calculate">Calculate</string>
+    <string name="helloWorld">Hello World</string>
+    <string name="startButton">Get Started</string>
+    <string name="belowFirstPage">By continuing, you accept the Term of Use and Privacy Policy</string>
+    <string name="skip">Skip</string>
+</resources>

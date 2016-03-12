@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="nextButton" type="id"/>
+    <item name="countLikes" type="id"/>
+    <item name="commentButton" type="id"/>
+    <item name="heartButton" type="id"/>
+</resources>

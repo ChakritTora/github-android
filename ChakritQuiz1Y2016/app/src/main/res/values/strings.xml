@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">ChakritQuiz1Y2016</string>
+    <string name="action_settings">Settings</string>
+    <string name="name">Welcome to KKU</string>
+    <string name="countLikes">0 likes</string>
+    <string name="nextButton">Next</string>
+</resources>
