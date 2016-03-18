@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <item name="dice1" type="id"/>
+    <item name="dice2" type="id"/>
+    <item name="dicevalue1" type="id"/>
+    <item name="dicevalue2" type="id"/>
+    <item name="result" type="id"/>
+    <item name="bottompanel" type="id"/>
+    <item name="conpanel" type="id"/>
+    <item name="dicepanel" type="id"/>
+
+</resources>
