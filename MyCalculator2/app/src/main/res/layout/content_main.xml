@@ -162,53 +162,17 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="10dp">
+                android:orientation="vertical">
 
-                <com.inthecheesefactory.thecheeselibrary.widget.AdjustableImageButton
+                <com.example.maewdamn.mycalculator2.CustomView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:adjustViewBounds="true"
-                    android:scaleType="fitCenter"
-                    android:background="@android:color/transparent"
-                    android:src="@drawable/ic_launcher"/>
+                    android:layout_height="150dp" />
 
-                <com.inthecheesefactory.thecheeselibrary.widget.AdjustableImageButton
+                <com.example.maewdamn.mycalculator2.CustomView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:adjustViewBounds="true"
-                    android:scaleType="fitCenter"
-                    android:background="@drawable/btn_default_normal"
-                    android:src="@drawable/ic_launcher" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="10dp">
-
-                <com.inthecheesefactory.thecheeselibrary.widget.AdjustableImageButton
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:adjustViewBounds="true"
-                    android:scaleType="fitCenter"
-                    android:background="@android:color/transparent"
-                    android:src="@drawable/ic_launcher"/>
-
-                <com.inthecheesefactory.thecheeselibrary.widget.AdjustableImageButton
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:adjustViewBounds="true"
-                    android:scaleType="fitCenter"
-                    android:background="@drawable/btn_default_normal"
-                    android:src="@drawable/ic_launcher" />
-
+                    android:layout_height="150dp"
+                    app:isBlue="true"/>
+                
             </LinearLayout>
 
 
