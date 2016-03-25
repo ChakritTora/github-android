@@ -73,6 +73,11 @@ public class CustomView extends View {
                 return false;
             }
 
+            public boolean onTouchEvent(MotionEvent e) {
+                gestureDetector.onTouchEvent(e);
+                return false;
+            }
+
             @Override
             public void onShowPress(MotionEvent e) {
 
@@ -90,6 +95,7 @@ public class CustomView extends View {
 
             @Override
             public void onLongPress(MotionEvent e) {
+
 
             }
 
@@ -110,6 +116,7 @@ public class CustomView extends View {
 
             }
         });
+
     }
 
     @Override
@@ -136,6 +143,8 @@ public class CustomView extends View {
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
+        gestureDetector.onTouchEvent(event);
+
         switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN:
                 isDown = true;
