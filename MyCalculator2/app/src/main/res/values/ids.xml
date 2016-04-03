@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="button" type="id"/>
+    <item name="operator" type="id"/>
+    <item name="firstNum" type="id"/>
+    <item name="secondNum" type="id"/>
+    <item name="result" type="id"/>
+    <item name="result_activitySecond" type="id"/>
+</resources>

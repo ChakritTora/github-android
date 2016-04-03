@@ -1,5 +1,6 @@
 package com.example.maewdamn.mycalculator2;
 
+import android.content.Intent;
 import android.graphics.Point;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -19,7 +20,7 @@ import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     EditText firstNum, secondNum;
     TextView result;
@@ -28,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
     RadioButton plus, minus, multiple, devide;
     Switch switch1;
     double resultNum, first, second;
+    CustomViewGroup viewGroup1, viewGroup2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +46,12 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+
+        button = (Button) findViewById(R.id.button);
+        firstNum = (EditText) findViewById(R.id.firstNum);
+        secondNum = (EditText) findViewById(R.id.secondNum);
+        operator = (RadioGroup) findViewById(R.id.operator);
+        result = (TextView) findViewById(R.id.result);
 
         Display display = getWindowManager().getDefaultDisplay();
         Point size = new Point();
@@ -99,8 +107,10 @@ public class MainActivity extends AppCompatActivity {
             }
         });*/
 
-        //button.setOnClickListener(this);
+        button.setOnClickListener(this);
         //switch1.setOnCheckedChangeListener(changeListener);
+
+        initInstances();
     }
 
     private void showToast(String message) {
@@ -109,8 +119,8 @@ public class MainActivity extends AppCompatActivity {
         toast.show();
     }
 
-    /*public void onClick(View view) {
-        //if (view == button) {
+    public void onClick(View view) {
+        if (view == button) {
             try {
                 first = Double.parseDouble(firstNum.getText().toString());
 
@@ -164,8 +174,12 @@ public class MainActivity extends AppCompatActivity {
 
 
             result.setText("= " + resultNum);
-        //}
-    }*/
+
+            Intent intent = new Intent(MainActivity.this, SecondActivity.class);
+            intent.putExtra("resultNum", resultNum);
+            startActivity(intent);
+        }
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -197,5 +211,14 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    private void initInstances() {
+        viewGroup1 = (CustomViewGroup) findViewById(R.id.viewGroup1);
+        viewGroup2 = (CustomViewGroup) findViewById(R.id.viewGroup2);
+
+        viewGroup1.setButtonText("Hello");
+        viewGroup2.setButtonText("World");
+
     }
 }

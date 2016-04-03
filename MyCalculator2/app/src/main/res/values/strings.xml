@@ -7,4 +7,6 @@
     <string name="startButton">Get Started</string>
     <string name="belowFirstPage">By continuing, you accept the Term of Use and Privacy Policy</string>
     <string name="skip">Skip</string>
+    <string name="button">BUTTON</string>
+    <string name="title_activity_second">SecondActivity</string>
 </resources>
