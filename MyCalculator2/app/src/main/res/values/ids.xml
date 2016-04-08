@@ -6,4 +6,7 @@
     <item name="secondNum" type="id"/>
     <item name="result" type="id"/>
     <item name="result_activitySecond" type="id"/>
+    <item name="bundle" type="id"/>
+    <item name="serializable" type="id"/>
+    <item name="parcelable" type="id"/>
 </resources>

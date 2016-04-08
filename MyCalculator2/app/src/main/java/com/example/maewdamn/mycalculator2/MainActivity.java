@@ -14,9 +14,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -26,10 +24,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     TextView result;
     Button button;
     RadioGroup operator;
-    RadioButton plus, minus, multiple, devide;
-    Switch switch1;
+    Bundle bundle;
+    Coordinate c1;
+    CoordinateSerializable c2;
+    CoordinateParcelable c3;
     double resultNum, first, second;
     CustomViewGroup viewGroup1, viewGroup2;
+
+
+    public class Coordinate {
+        public int x, y, z;
+    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +44,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-       FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -61,51 +67,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         Toast.makeText(MainActivity.this, "Width = " + width + ", Height = " + height, Toast.LENGTH_SHORT).show();
 
-
-
-        /*Switch.OnCheckedChangeListener changeListener = new Switch.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton button, boolean checked) {
-                if (checked) {
-                    button.setText("ON");
-                } else {
-                    button.setText("OFF");
-                }
-            }
-        };*/
-
-        /*operator.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                switch (checkedId) {
-                    case R.id.plus:
-                        resultNum = first + second;
-                        break;
-
-                    case R.id.minus:
-                        resultNum = first - second;
-                        break;
-
-                    case R.id.multiple:
-                        resultNum = first * second;
-                        break;
-
-                    case R.id.devide:
-                        try {
-                            resultNum = first / second;
-                            if (resultNum == Double.POSITIVE_INFINITY || resultNum == Double.NEGATIVE_INFINITY) throw new ArithmeticException();
-                            break;
-
-                        } catch (ArithmeticException ae) {
-                            //showToast("Please devide by a non-zero number");
-                            resultNum = 0;
-
-                        }
-                }
-
-                result.setText("= " + resultNum);
-            }
-        });*/
 
         button.setOnClickListener(this);
         //switch1.setOnCheckedChangeListener(changeListener);
@@ -177,6 +138,29 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             Intent intent = new Intent(MainActivity.this, SecondActivity.class);
             intent.putExtra("resultNum", resultNum);
+
+            c1 = new Coordinate();
+            c1.x = 5;
+            c1.y = 10;
+            c1.z = 20;
+            bundle = new Bundle();
+            bundle.putInt("x", c1.x);
+            bundle.putInt("y", c1.y);
+            bundle.putInt("z", c1.z);
+            intent.putExtra("cBundle", bundle);
+
+            c2 = new CoordinateSerializable();
+            c2.x = 5;
+            c2.y = 10;
+            c2.z = 20;
+            intent.putExtra("cSerializable", c2);
+
+            c3 = new CoordinateParcelable();
+            c3.x = 5;
+            c3.y = 10;
+            c3.z = 20;
+            intent.putExtra("cParcelable", c3);
+
             startActivity(intent);
         }
     }

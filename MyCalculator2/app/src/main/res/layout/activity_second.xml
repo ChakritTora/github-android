@@ -7,12 +7,35 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
     tools:context="com.example.maewdamn.mycalculator2.SecondActivity">
 
     <TextView
         android:id="@id/result_activitySecond"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="@color/blue"
+        android:textSize="30sp"/>
+
+    <TextView
+        android:id="@id/bundle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/blue"
+        android:textSize="30sp"/>
+
+    <TextView
+        android:id="@id/serializable"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/blue"
+        android:textSize="30sp"/>
+
+    <TextView
+        android:id="@id/parcelable"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/blue"
         android:textSize="30sp"/>
 
 </LinearLayout>
