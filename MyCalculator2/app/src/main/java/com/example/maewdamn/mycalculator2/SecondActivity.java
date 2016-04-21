@@ -1,13 +1,19 @@
 package com.example.maewdamn.mycalculator2;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 public class SecondActivity extends Activity {
 
     double resultNum;
     Bundle cBundle;
+    Button secondOKButton;
+    EditText secondEditText;
     CoordinateSerializable cSerial;
     CoordinateParcelable cParcelable;
     int x, y, z, x2, y2, z2, x3, y3, z3;
@@ -17,6 +23,9 @@ public class SecondActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
+
+        secondOKButton = (Button) findViewById(R.id.secondOKButton);
+        secondEditText = (EditText) findViewById(R.id.secondEditText);
 
         //Intent intent = getIntent();
         //intent.getDoubleExtra("resultNum", resultNum);
@@ -56,6 +65,16 @@ public class SecondActivity extends Activity {
 
         result_parcelable = (TextView) findViewById(R.id.parcelable);
         result_parcelable.setText("From Parcelable: x = " + x3 + " y = " + y3 + " z = " + z3);
+    }
+
+    public void onClick(View view) {
+        if (view == secondOKButton) {
+            Intent returnIntent = new Intent();
+            returnIntent.putExtra("result", secondEditText.getText().toString());
+            setResult(RESULT_OK, returnIntent);
+            finish();
+        }
+
     }
 
 }

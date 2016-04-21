@@ -6,6 +6,8 @@ import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.os.Build;
+import android.os.Bundle;
+import android.os.Parcelable;
 import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.GestureDetector;
@@ -162,6 +164,41 @@ public class CustomView extends View {
                 return true;
         }
         return super.onTouchEvent(event);
+    }
+
+
+
+    /*@Override
+    protected Parcelable onSaveInstanceState() {
+        Parcelable superState = super.onSaveInstanceState();
+        CustomViewSavedState savedState = new CustomViewSavedState(superState);
+        savedState.setBlue(isBlue);
+        return savedState;
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Parcelable state) {
+        CustomViewSavedState savedState = (CustomViewSavedState) state;
+        super.onRestoreInstanceState(savedState.getSuperState());
+        isBlue = savedState.isBlue();
+    }*/
+
+    @Override
+    protected Parcelable onSaveInstanceState() {
+        Parcelable superState = super.onSaveInstanceState();
+        BundleSavedState savedState = new BundleSavedState(superState);
+        Bundle bundle = new Bundle();
+        bundle.putBoolean("isBlue", isBlue);
+        savedState.setBundle(bundle);
+        return savedState;
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Parcelable state) {
+        BundleSavedState savedState = (BundleSavedState) state;
+        super.onRestoreInstanceState(savedState.getSuperState());
+        Bundle bundle = savedState.getBundle();
+        isBlue = bundle.getBoolean("isBlue");
     }
     
 }

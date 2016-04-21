@@ -9,4 +9,6 @@
     <item name="bundle" type="id"/>
     <item name="serializable" type="id"/>
     <item name="parcelable" type="id"/>
+    <item name="secondEditText" type="id"/>
+    <item name="secondOKButton" type="id"/>
 </resources>

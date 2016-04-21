@@ -9,7 +9,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Display;
 import android.view.Gravity;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -21,6 +20,7 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     EditText firstNum, secondNum;
+    String resultString;
     TextView result;
     Button button;
     RadioGroup operator;
@@ -65,7 +65,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         int width = size.x;
         int height = size.y;
 
-        Toast.makeText(MainActivity.this, "Width = " + width + ", Height = " + height, Toast.LENGTH_SHORT).show();
+        //Toast.makeText(MainActivity.this, "Width = " + width + ", Height = " + height, Toast.LENGTH_SHORT).show();
 
 
         button.setOnClickListener(this);
@@ -161,7 +161,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             c3.z = 20;
             intent.putExtra("cParcelable", c3);
 
-            //startActivity(intent);
+            startActivityForResult(intent, 12345);
         }
     }
 
@@ -208,13 +208,24 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         firstNum.setText(savedInstanceState.getString("num1"));
         secondNum.setText(savedInstanceState.getString("num2"));
         result.setText(savedInstanceState.getString("result"));
-    }*/
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
+    }*/
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 12345) {
+            if (resultCode == RESULT_OK) {
+                resultString = data.getStringExtra("result");
+                Toast.makeText(MainActivity.this, resultString, Toast.LENGTH_SHORT).show();
+            }
+        }
     }
 
     @Override
