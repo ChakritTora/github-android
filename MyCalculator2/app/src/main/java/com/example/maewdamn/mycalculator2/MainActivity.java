@@ -161,9 +161,54 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             c3.z = 20;
             intent.putExtra("cParcelable", c3);
 
-            startActivity(intent);
+            //startActivity(intent);
         }
     }
+
+    /*@Override
+    protected void onStart() {
+        super.onStart();
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putString("num1", firstNum.getText().toString());
+        outState.putString("num2", secondNum.getText().toString());
+        outState.putString("result", result.getText().toString());
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        firstNum.setText(savedInstanceState.getString("num1"));
+        secondNum.setText(savedInstanceState.getString("num2"));
+        result.setText(savedInstanceState.getString("result"));
+    }*/
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
