@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">MySQLiteData</string>
+    <string name="title">These are tasks to do</string>
+</resources>

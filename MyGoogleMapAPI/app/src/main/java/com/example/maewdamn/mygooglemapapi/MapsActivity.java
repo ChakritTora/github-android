@@ -42,13 +42,23 @@ public class MapsActivity extends FragmentActivity implements GoogleApiClient.Co
                 addApi(LocationServices.API).build();
 
         mLocationRequest = LocationRequest.create().setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY).
-                setInterval(10*1000).setFastestInterval(1*1000);
+                setInterval(10 * 1000).setFastestInterval(1 * 1000);
     }
+
+    /*@Override
+    public void onMapReady(GoogleMap googleMap) {
+        mMap = googleMap;
+
+        // Add a marker in Sydney and move the camera
+        LatLng sydney = new LatLng(-34, 151);
+        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+    }*/
 
     @Override
     protected void onResume() {
         super.onResume();
-        //setUpMapIfNeeded();
+        setUpMapIfNeeded();
         mGoogleApiClient.connect();
     }
 
@@ -61,14 +71,18 @@ public class MapsActivity extends FragmentActivity implements GoogleApiClient.Co
         }
     }
 
-    @Override
-    public void onMapReady(GoogleMap googleMap) {
-        this.mMap = googleMap;
+    private void setUpMapIfNeeded() {
+        if (mMap == null) {
+            mMap = ((SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map))
+                    .getMap();
+            if (mMap != null) {
+                setUpMap();
+            }
+        }
+    }
 
-        // Add a marker in Sydney and move the camera
-        LatLng sydney = new LatLng(-34, 151);
-        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+    private void setUpMap() {
+        mMap.addMarker(new MarkerOptions().position(new LatLng(0, 0)).title("Marker"));
     }
 
     @Override
@@ -85,11 +99,10 @@ public class MapsActivity extends FragmentActivity implements GoogleApiClient.Co
             return;
         }
         Location location = LocationServices.FusedLocationApi.getLastLocation(mGoogleApiClient);
-
         if (location == null) {
             LocationServices.FusedLocationApi.requestLocationUpdates(mGoogleApiClient, mLocationRequest, this);
-
-        } else {
+        }
+        else {
             handleNewLocation(location);
         }
     }
@@ -118,10 +131,6 @@ public class MapsActivity extends FragmentActivity implements GoogleApiClient.Co
         handleNewLocation(location);
     }
 
-    private void setUpMap() {
-        mMap.addMarker(new MarkerOptions().position(new LatLng(0, 0)).title("Marker"));
-    }
-
     private void handleNewLocation(Location location) {
         double curLat = location.getLatitude();
         double curLng = location.getLongitude();
@@ -132,5 +141,11 @@ public class MapsActivity extends FragmentActivity implements GoogleApiClient.Co
 
         mMap.addMarker(options);
         mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
+        mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 10));
+    }
+
+    @Override
+    public void onMapReady(GoogleMap googleMap) {
+
     }
 }
