@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">ChakritQuiz2Y2016</string>
+    <string name="action_settings">Settings</string>
+    <string name="name">Tossing Dice Game</string>
+    <string name="p1">Player 1</string>
+    <string name="p2">Player 2</string>
+    <string name="result">The game result is not available yet</string>
+    <string name="continues">Want to continue?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="value1">Dice1 value = </string>
+    <string name="value2">Dice2 value = </string>
+    <string name="input1">1</string>
+    <string name="input2">2</string>
+    <string name="question">Which player do you want to be?</string>
+</resources>

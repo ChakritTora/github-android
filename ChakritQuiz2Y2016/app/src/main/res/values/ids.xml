@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <item name="dice1" type="id"/>
+    <item name="dice2" type="id"/>
+    <item name="dicevalue1" type="id"/>
+    <item name="dicevalue2" type="id"/>
+    <item name="result" type="id"/>
+    <item name="bottompanel" type="id"/>
+    <item name="conpanel" type="id"/>
+    <item name="dicepanel" type="id"/>
+    <item name="namePanel" type="id"/>
+    <item name="diceAllPanel" type="id"/>
+    <item name="player1Name" type="id"/>
+    <item name="player2Name" type="id"/>
+    <item name="radioGroup" type="id"/>
+    <item name="selectPlayer" type="id"/>
+    <item name="p1Radio" type="id"/>
+    <item name="p2Radio" type="id"/>
+
+</resources>

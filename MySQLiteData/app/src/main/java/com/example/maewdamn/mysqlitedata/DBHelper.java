@@ -16,7 +16,7 @@ import java.util.List;
  * Created by Chakrit Tokuhara on 28/4/2559.
  */
 public class DBHelper {
-    private static final String DATABASE_NAME = "tasks.db";
+    private static final String DATABASE_NAME = "stats.db";
     private static final int DATABASE_VERSION = 1;
     private static final String TABLE_NAME = "tasks";
     private Context context;
